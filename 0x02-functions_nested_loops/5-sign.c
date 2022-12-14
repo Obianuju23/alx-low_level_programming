@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * print_sign - return 0 letter not lowercase, 1 letter lowercase
- *
+ * print_sign - Write a function that prints the sign of a number
  *
  * @n : number to check
  *
@@ -23,8 +22,8 @@ int print_sign(int n)
 		{
 			test = 0;
 			_putchar('0');
-		}	
-		else 
+		}
+		else
 		{
 			test = -1;
 			_putchar('-');
