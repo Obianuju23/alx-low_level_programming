@@ -13,7 +13,9 @@ int i = 0;
 
 	while (s[i] != '\0')
 	{
-		_putchar(i++);
+		(i++);
+
+		_putchar(s[i]);
 	}
 		_putchar('\n');
 }
