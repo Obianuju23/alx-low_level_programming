@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-/*main: the program that prints [a] = 98
-*/
 int main(void)
 {
 	int n;
