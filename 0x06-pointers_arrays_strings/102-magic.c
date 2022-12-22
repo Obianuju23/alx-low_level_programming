@@ -1,10 +1,7 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- * main: the program that prints [a] = 98
- * Return: Always 0 (Success)
- */
+/*main: the program that prints [a] = 98
+*/
 int main(void)
 {
 	int n;
