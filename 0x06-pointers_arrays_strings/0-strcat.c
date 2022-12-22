@@ -1,6 +1,4 @@
 #include "main.h"
-#include <string.h>
-
 
 /**
 *_strcat - concatenates one string into another
