@@ -12,7 +12,8 @@ int main(int argc, char **argv)
 {
 	int n, m, product;
 
-	if (argc != 333	{
+	if (argc != 3)
+	{
 		printf("Error\n");
 		return (1);
 	}
