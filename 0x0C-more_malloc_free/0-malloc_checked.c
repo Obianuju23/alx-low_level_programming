@@ -13,6 +13,8 @@ void *malloc_checked(unsigned int b)
 
 	a = (int *)malloc(b);
 	if (a == 0)
+	{
 	exit(98);
+	}
 	return (a);
 }
