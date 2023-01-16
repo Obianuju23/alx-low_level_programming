@@ -3,23 +3,19 @@
 #include "dog.h"
 
 /**
- * init_dog - initialises the struct var type dog
- *@name: dog name
- *@age: dog age
- *@owner: owner of the dog
- *@d: pointer to struct type dog
- *Return: Always 0(success)
+ * print_dog - function that prints information on dog and owner
+ * @d: pointer to struct type dog
+ * Return: Always 0(success)
  */
 
 void print_dog(struct dog *d)
 {
 	if (d != NULL)
 	{
-
 	if (d->name == NULL)
-                  printf("Name: (nil)\n");
-          else
-                  printf("Name: %s\n", d->name);
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", d->name);
 
 	if (d->age == 0)
 		printf("Age: %f\n", 0.0);
@@ -30,6 +26,5 @@ void print_dog(struct dog *d)
 		printf("owner: (nil)\n");
 	else
 		printf("owner is: %s\n", d->owner);
-	
 	}
 }
