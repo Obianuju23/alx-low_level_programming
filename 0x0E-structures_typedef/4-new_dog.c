@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- **new_dog - function saves a copy of owner and dog info
+ *new_dog - function saves a copy of owner and dog info
  *@d - a pointer to struct dog contained in the header file
  *it is used to update the values, name, age and owner as
  *passed by the main function
