@@ -3,27 +3,47 @@
 #include <stdlib.h>
 
 /**
- *new_dog - function saves a copy of owner and dog info
- *@d - a pointer to struct dog contained in the header file
- *it is used to update the values, name, age and owner as
- *passed by the main function
- *@name: dog name as passed in the main function
- *@age: age as passed in the main function
- *@owner: owners name as passed in the main function
- *
- * Return: mem
+ * new_dog - new dog
+ * @name: name's dog
+ * @age: age's dog
+ * @owner: owner's dog
+ * Return: newdog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *mem;
 
-	mem = malloc(sizeof(dog_t));
-	if (mem == NULL)
+	int i = 0, j = 0, k;
+	dog_t *doge;
+
+	while (name[i] != '\0')
+		i++;
+	while (owner[j] != '\0')
+		j++;
+	doge = malloc(sizeof(dog_t));
+	if (doge == NULL)
+	{
+		free(doge);
 		return (NULL);
-	mem->name = malloc(sizeof(name));
-	mem->name = strdup(name);
-	mem->owner = malloc(sizeof(owner));
-	mem->owner = strdup(owner);
-	mem->age = age;
-	return (mem);
+	}
+	doge->name = malloc(i * sizeof(doge->name));
+	if (doge->name == NULL)
+	{
+		free(doge->name);
+		free(doge);
+		return (NULL);
+	}
+	for (k = 0; k <= i; k++)
+		doge->name[k] = name[k];
+	doge->age = age;
+	doge->owner = malloc(j * sizeof(doge->owner));
+	if (doge->owner == NULL)
+	{
+		free(doge->owner);
+		free(doge->name);
+		free(doge);
+		return (NULL);
+	}
+	for (k = 0; k <= j; k++)
+		doge->owner[k] = owner[k];
+	return (doge);
 }
