@@ -4,7 +4,6 @@
 *print_strings - function that prints strings
 *@separator: pointer parameter
 *@n: parameter
-*Return: nil or ignore
 */
 
 void print_strings(const char *separator, const unsigned int n, ...)
