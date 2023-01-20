@@ -1,32 +1,30 @@
 #include "variadic_functions.h"
 
 /**
-*print_strings - function that prints strings
-*@separator: pointer parameter
-*@n: parameter
-*/
-
+ * print_strings - prints strings
+ * @separator: pointer param
+ * @n: param
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list valist;
 	unsigned int i;
-	char *s;
+	char *str;
 
 	va_start(valist, n);
 
 	for (i = 0; i < n; i++)
 	{
-		s = va_arg(valist, char *);
+		str = va_arg(valist, char *);
 
-	if (s)
-		printf("%s", s);
-	else
-		printf(("nil"));
+		if (str)
+			printf("%s", str);
+		else
+			printf("(nil)");
 
-	if (i < n - 1)
-
-		if (separator)
-			printf("%s", separator);
+		if (i < n - 1)
+			if (separator)
+				printf("%s", separator);
 	}
 
 	printf("\n");
