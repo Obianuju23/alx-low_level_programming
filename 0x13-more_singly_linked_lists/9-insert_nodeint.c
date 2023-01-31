@@ -9,39 +9,55 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *node, *temp = *head;
-	size_t i = 0;
+listint_t *temp = *head, *newNode;
+	unsigned int i;
 
-	node = malloc(sizeof(listint_t));
-	if (!node)
+	if (head == NULL)
 		return (NULL);
 
-	node->n = n;
-	node->next = NULL;
-
-	if (!*head && !idx)
+	if (*head == NULL && idx != 0)
+		return (NULL);
+	temp = *head;
+	if (idx != 0)
 	{
-		*head = node;
-		return (node);
+		for (i = 0; temp != NULL && i < (idx - 1); i++)
+			temp = temp->next;
+		if (temp == NULL)
+			return (NULL);
 	}
-
-	else if (!*head && idx)
+	newNode = malloc(sizeof(listint_t));
+	if (newNode == NULL)
 		return (NULL);
 
-	else if (!idx)
+	newNode->n = n;
+	if (idx == 0)
 	{
-		node->next = temp;
-		*head = node;
-		return (node);
+		newNode->next = *head;
+		*head = newNode;
+		return (newNode);
 	}
 
-	while (i < (idx - 1))
-	{
-		temp = temp->next;
-		i++;
-	}
-	node->next = temp->next;
-	temp->next = node;
+	newNode->next = temp->next;
+	temp->next = newNode;
 
-	return (node);
+	return (newNode);
+}
+
+/**
+ * listint_len - gets the length of a linked list
+ * @h: pointer to a struct listint
+ * Return: returns the number of linked link
+ */
+
+size_t listint_len(const listint_t *h)
+{
+	size_t n = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		n++;
+	}
+
+	return (n);
 }
