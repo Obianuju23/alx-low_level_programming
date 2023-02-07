@@ -1,49 +1,32 @@
 #include "main.h"
-
 /**
- * read_textfile - function reads a textfile and prints it to
- * stdout
- *@filename: the file name
- *@letters: number of bytes to be printed
- *
- * Return: returns the number of bytes printed
- *
- * Description - fd opens the file, r reads it and stores
- * the number of bytes requested, in the memory space buf,
- * write prints the number of bytes of charcters in the
- * buf to the stdout
+ * read_textfile - Reads a textfile and prints the contents to the POSIX STDOUT
+ * @filename: The name of the file to read from
+ * @letters: The number of characters it should print to the STDOUT
+ * Return: Returns the number of characters printed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, r, w;
-	char *buf;
+	ssize_t fild = 0, chk = 0;
+	char *buffer;
 
-	if (filename == NULL)
+	if (!filename || !letters)
 		return (0);
 
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
+	fild = open(filename, O_RDONLY);
+	if (fild < 0)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	buffer = malloc(sizeof(char) * (letters));
+	if (!buffer)
 		return (0);
 
-	r = read(fd, buf, letters);
-	if (r < 0)
-	{
-		free(buf);
+	chk = read(fild, buffer, letters);
+	chk = write(STDOUT_FILENO, buffer, chk);
+	if (chk < 0)
 		return (0);
-	}
-	buf[r] = '\0';
 
-	w = write(STDOUT_FILENO, buf, letters);
-	if (w < 0)
-	{
-		free(buf);
-		return (0);
-	}
-	close(fd);
-	free(buf);
-	return (w);
+	close(fild);
+	free(buffer);
+	return (chk);
 }
