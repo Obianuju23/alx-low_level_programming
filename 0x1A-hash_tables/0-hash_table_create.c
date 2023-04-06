@@ -1,4 +1,4 @@
-i#include "hash_tables.h"
+#include "hash_tables.h"
 
 /**
  * hash_table_create - This is a function that creates a hash table
