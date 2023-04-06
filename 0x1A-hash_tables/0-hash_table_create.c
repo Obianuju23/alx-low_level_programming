@@ -26,11 +26,11 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (new_hash_table->array == NULL)
 		return (NULL);
 	
-	i = 0;
+	/*i = 0;
 	while (i < size)
 	{
 		new_hash_table->array[i] = NULL;
 		i++;
-	}
+	}*/
 	return (new_hash_table);
 }
