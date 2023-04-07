@@ -6,7 +6,8 @@
  *@ht: pointer to hash table
  *@key: the key used in getting the value
  *
- * Return: returns the content of key and its value or NUll if cannot match  * the key
+ * Return: returns the content of key and its value
+ * OR NUll if cannot match the key
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
