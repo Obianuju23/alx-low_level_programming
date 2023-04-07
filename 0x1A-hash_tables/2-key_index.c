@@ -10,10 +10,10 @@
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int index code;
+	unsigned long int index;
 
-	index code = hash_djb2(key) % size;
+	index = hash_djb2(key) % size;
 
-	return (index code);
+	return (index);
 
 }
