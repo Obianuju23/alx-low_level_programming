@@ -21,26 +21,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 	new_hash_table->size = size;
 
     /* Allocate memory space for the array of hash nodes */
-	new_hash_table->array = malloc(sizeof(hash_node_t *) *size);
+	new_hash_table->array = malloc(sizeof(hash_node_t *) * size);
 
 	if (new_hash_table->array == NULL)
 	{
 		free(new_hash_table);
 		return (NULL);
 	}
-	
-	for (i = 0; i < size; i++)
-	{
-		new_hash_table->array[i] = NULL;
-	}	
 
-	/*
 	i = 0;
 	while (i < size)
 	{
 		new_hash_table->array[i] = NULL;
 		i++;
 	}
-	*/
+
 	return (new_hash_table);
 }
