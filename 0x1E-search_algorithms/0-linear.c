@@ -9,6 +9,30 @@
  *Return: The first index where value is located
  */
 
+
+int linear_search(int *array, size_t size, int value) {
+
+    if (!array || array == NULL) {
+        return -1;
+    }
+
+    for (size_t i = 0; i < size; i++) {
+        printf("Comparing checked value [%d] = [%d]\n", value, array[i];
+        if (array[i] == value) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+
+
+
+
+
+
 int linear_search(int *array, size_t size, int value) {
  
     unsigned int i;
