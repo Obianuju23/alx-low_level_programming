@@ -27,11 +27,14 @@ int binary_search(int *array, size_t size, int value)
 		printf("Searching in array: ");
 		for (i = min; i <= max; i++)
 		{
-			printf("%d ", array[i]);
 			if (num != max)
-			printf(", ");
+				printf(", %d ", array[i]);
+			else
+		
+				printf("%d ", array[i]);
+
 		}
-		printf("\n");	
+		printf("\n");
 
 		mid = (min + max) / 2;
 
